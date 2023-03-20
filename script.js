@@ -30,14 +30,17 @@ fetch(url)
 
     ageBtn.addEventListener(`click`, () => {
       display.innerHTML = ``;
+      ageBtn.dataset.attr = age;
       display.innerHTML = age;
     });
     emailBtn.addEventListener(`click`, () => {
       display.innerHTML = ``;
+      emailBtn.dataset.attr = email;
       display.innerHTML = email;
     });
     phnBtn.addEventListener(`click`, () => {
       display.innerHTML = ``;
+      phnBtn.dataset.attr = phone;
       display.innerHTML = phone;
     });
   });
@@ -64,16 +67,23 @@ async function getData(params) {
   // console.log(data.dataset);
 
   // console.log(`getData `, age);
-  ageBtn.addEventListener(`click`, () => {
+  ageBtn.addEventListener(`click`, (e) => {
+    e.preventDefault();
     display.innerHTML = ``;
+    ageBtn.dataset.attr = age;
+    // console.log(ageBtn.dataset);
     display.innerHTML = age;
   });
-  emailBtn.addEventListener(`click`, () => {
+  emailBtn.addEventListener(`click`, (e) => {
+    e.preventDefault();
     display.innerHTML = ``;
+    emailBtn.dataset.attr = email;
+    // console.log(emailBtn.dataset);
     display.innerHTML = email;
   });
   phnBtn.addEventListener(`click`, () => {
     display.innerHTML = ``;
+    phnBtn.dataset.attr = phone;
     display.innerHTML = phone;
   });
 }
